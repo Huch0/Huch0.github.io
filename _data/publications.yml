@@ -27,8 +27,6 @@
     - { type: arXiv,   url: "https://arxiv.org/abs/2605.10966" }
     - { type: paper,   url: "https://arxiv.org/pdf/2605.10966" }
     - { type: project, url: "https://mm-tbench.github.io/multimedia-terminal-bench/" }
-    - { type: code,    url: "TODO" }
-    - { type: dataset, url: "TODO" }
     - { type: bibtex,  url: "/assets/bib/heo2026mmtb.bib" }
 
 - key: heo2025tardiness
