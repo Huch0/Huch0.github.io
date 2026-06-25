@@ -98,8 +98,8 @@
 .profile__name-kr { color: var(--text-muted); font-size: var(--text-base); margin-bottom: var(--space-3); }
 .profile__meta { font-size: var(--text-sm); color: var(--text-muted); margin: var(--space-1) 0; }
 .profile__meta strong { color: var(--text); font-weight: 700; }
-.profile__meta a { color: var(--text-muted); }
-.profile__meta a:hover { color: var(--accent); }
+.profile__meta a { color: var(--accent); text-decoration: none; }
+.profile__meta a:hover { text-decoration: underline; }
 
 .profile__links {
   display: flex;

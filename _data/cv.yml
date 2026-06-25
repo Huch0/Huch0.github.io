@@ -2,12 +2,13 @@
 # Mark unknown items with `todo: true` (renders an italic placeholder, never invented data).
 
 bio: >-
-  I am an M.S. student at the Graduate School of Artificial Intelligence, POSTECH, advised by
-  Prof. Jungseul Ok in the Machine Learning Lab. My research interests lie in agentic AI —
-  especially computer-use agents, terminal agents, multimodal agents, agent harness design,
-  and benchmark construction for realistic agent workflows. I am interested in building AI
-  agents that can operate over persistent workspaces, interact with tools, and solve tasks
-  grounded in complex real-world artifacts such as code, documents, images, audio, and video.
+  I am an M.S. student at the [Graduate School of Artificial Intelligence, POSTECH](https://ai.postech.ac.kr/),
+  advised by [Prof. Jungseul Ok](https://sites.google.com/view/jungseulok) in the [Machine Learning Lab](https://sites.google.com/view/jungseulok).
+  My research interests lie in agentic AI — especially computer-use agents, terminal agents,
+  multimodal agents, agent harness design, and benchmark construction for realistic agent workflows.
+  I am interested in building AI agents that can operate over persistent workspaces, interact with
+  tools, and solve tasks grounded in complex real-world artifacts such as code, documents, images,
+  audio, and video.
 
 # Kept short on purpose (3–4 reads cleanest on the profile).
 research_interests:
