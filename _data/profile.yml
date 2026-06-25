@@ -5,11 +5,13 @@ photo: /assets/img/profile.jpg   # TODO: replace placeholder with a real headsho
 
 role: M.S. student
 affiliation_lines:
-  - Graduate School of Artificial Intelligence, POSTECH
-  - Machine Learning Lab
+  - text: "Graduate School of Artificial Intelligence, POSTECH"
+    url: "https://ai.postech.ac.kr/"
+  - text: "Machine Learning Lab"
+    url: "https://sites.google.com/view/jungseulok"
 advisor:
   name: Prof. Jungseul Ok
-  url: ""        # optional: advisor / lab homepage
+  url: "https://sites.google.com/view/jungseulok"
 
 email: chiyeongheo@postech.ac.kr
 homepage: "https://huch0.github.io"   # shown in the CV header (not the web profile card)

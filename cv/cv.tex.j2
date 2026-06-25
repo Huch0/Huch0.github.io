@@ -28,7 +28,7 @@
 
 % ---------- Header ----------
 {\Huge\bfseries ((( profile.name | tex )))}\\[4pt]
-{\color{muted} ((( profile.role | tex )))((* for line in profile.affiliation_lines *)) \textbullet{} ((( line | tex )))((* endfor *))}\\[2pt]
+{\color{muted} ((( profile.role | tex )))((* for line in profile.affiliation_lines *)) \textbullet{} ((( line.text | tex )))((* endfor *))}\\[2pt]
 ((* if cv.advisor is defined and cv.advisor *)){\color{muted}Advised by ((( cv.advisor.name | tex )))}\\[2pt]((* endif *))
 {\color{muted}%
 \href{mailto:((( profile.email )))}{((( profile.email | tex )))}%

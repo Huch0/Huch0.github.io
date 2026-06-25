@@ -6,11 +6,11 @@
 
   {%- if p.role %}<p class="profile__meta"><strong>{{ p.role }}</strong></p>{% endif -%}
   {%- for line in p.affiliation_lines %}
-  <p class="profile__meta">{{ line }}</p>
+  <p class="profile__meta">{% if line.url %}<a href="{{ line.url }}" target="_blank" rel="noopener">{{ line.text }}</a>{% else %}{{ line.text }}{% endif %}</p>
   {%- endfor -%}
   {%- if p.advisor %}
   <p class="profile__meta">Advised by
-    {%- if p.advisor.url %} <a href="{{ p.advisor.url }}">{{ p.advisor.name }}</a>
+    {%- if p.advisor.url %} <a href="{{ p.advisor.url }}" target="_blank" rel="noopener">{{ p.advisor.name }}</a>
     {%- else %} {{ p.advisor.name }}{% endif -%}
   </p>
   {%- endif -%}
