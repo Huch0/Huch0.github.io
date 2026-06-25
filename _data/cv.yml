@@ -49,14 +49,14 @@ awards:
     note: "Busan Metropolitan City"
 
 patents:
-  - title_en: "Method and Program for Automated Production Planning Considering Factory Equipment and Operation Status"
-    title_kr: "공장 설비 및 작업 상태를 고려한 자동화된 생산 계획 수립 방법 및 프로그램"
+  - title_en: "Method and Apparatus for Establishing Automated Production Planning Based on Factory Equipment and Job Status"
+    title_kr: "공장 설비 및 작업 상태를 고려한 자동화된 생산 계획 수립 방법 및 장치"
     inventors:
       - { name: "Taewoon Kim" }
       - { name: "Jun Seo" }
       - { name: "Chiyeong Heo", me: true }
-    status: "Korean patent application (pending)"
-    assignee: "Pusan National University"
+    status: "Korean patent application (filed, under examination)"
+    assignee: "Pusan National University Industry-Academic Cooperation Foundation"
     filings:
       - { kind: "Provisional", number: "10-2024-0192808", date: "2024-12-20" }
       - { kind: "Main",        number: "10-2025-0028136", date: "2025-03-05" }
