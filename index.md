@@ -77,6 +77,7 @@ permalink: /
     <span class="entry__date">{{ a.date }}</span>
   </div>
   {%- if a.note %}<div class="entry__sub">{{ a.note }}</div>{% endif %}
+  {%- if a.url %}<div class="linkrow"><a href="{{ a.url }}" target="_blank" rel="noopener">LinkedIn</a></div>{% endif %}
 </div>
   {%- endif %}
 {%- endfor %}
