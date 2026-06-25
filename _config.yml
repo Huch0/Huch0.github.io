@@ -49,6 +49,8 @@ exclude:
   - Makefile
   - README.md
   - CONTEXT.md
+  - CLAUDE.md
+  - AGENTS.md
   - docs/
   - cv/            # LaTeX CV pipeline (source + generator), not web content
   - bib/           # raw .bib sources (rendered copies live under assets/)
