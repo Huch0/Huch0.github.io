@@ -32,6 +32,7 @@
 ((* if cv.advisor is defined and cv.advisor *)){\color{muted}Advised by ((( cv.advisor.name | tex )))}\\[2pt]((* endif *))
 {\color{muted}%
 \href{mailto:((( profile.email )))}{((( profile.email | tex )))}%
+((* if profile.homepage *)) \textbullet{} \href{((( profile.homepage )))}{((( profile.homepage | replace('https://','') | replace('http://','') | tex )))}((* endif *))%
 ((* for l in profile.links *)) \textbullet{} \href{((( l.url )))}{((( l.name | tex )))}((* endfor *))%
 }
 

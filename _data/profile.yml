@@ -12,6 +12,7 @@ advisor:
   url: ""        # optional: advisor / lab homepage
 
 email: chiyeongheo@postech.ac.kr
+homepage: "https://huch0.github.io"   # shown in the CV header (not the web profile card)
 cv: /assets/files/cv.pdf
 
 # Social / academic links (icons: github, scholar, linkedin)
