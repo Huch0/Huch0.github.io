@@ -97,4 +97,35 @@ Inventors: ((* for inv in pt.inventors *))((* if inv.me *))\textbf{((( inv.name 
 ((* endfor *))
 ((* endif *))
 
+% ---------- Projects ----------
+((* if projects *))
+\section*{Projects}
+((* for p in projects.featured *))
+\textbf{((( p.name | tex )))}((* if p.award *)) \hfill {\color{muted}((( p.award | tex )))}((* endif *))\\
+((* if p.role *)){\color{muted}((( p.role | tex )))}\\ ((* endif *))((( p.description | tex )))((* if p.stack *))\\ {\color{muted}((( p.stack | tex )))}((* endif *))
+\vspace{6pt}
+
+((* endfor *))
+((* if projects.mentoring *))
+\textit{Mentoring}\\[3pt]
+((* for p in projects.mentoring *))
+\textbf{((( p.name | tex )))}((* if p.role *)) \hfill {\color{muted}((( p.role | tex )))}((* endif *))\\
+((( p.description | tex )))
+\vspace{6pt}
+
+((* endfor *))
+((* endif *))
+((* if projects.class_projects *))
+\textit{Class Projects}\\[3pt]
+((* for grp in projects.class_projects *))
+\textbf{((( grp.subfield | tex )))}
+\begin{itemize}[leftmargin=*, itemsep=1pt, topsep=2pt]
+((* for it in grp['items'] *))
+\item ((( it.name | tex )))((* if it.course *)) {\color{muted}(((( it.course | tex ))))}((* endif *))((* if it.description *)) --- ((( it.description | tex )))((* endif *))
+((* endfor *))
+\end{itemize}
+((* endfor *))
+((* endif *))
+((* endif *))
+
 \end{document}

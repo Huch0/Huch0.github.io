@@ -262,6 +262,31 @@ html[data-theme="dark"] .award-badge { color: #ffd970; background: #36300f; }
 .project__desc { font-size: var(--text-sm); margin-bottom: var(--space-2); }
 .project__stack { font-size: var(--text-xs); color: var(--text-muted); font-family: var(--font-mono); margin-bottom: var(--space-2); }
 
+// --- Class projects grouped by subfield ------------------------------------
+.subfield { margin-bottom: var(--space-5); }
+.subfield__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--accent);
+  margin: var(--space-4) 0 var(--space-2);
+}
+.cproj {
+  padding: var(--space-3) 0;
+  border-top: var(--border-w) solid var(--border);
+}
+.cproj__head {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.cproj__name { font-weight: 700; font-size: 0.98rem; }
+.cproj__course { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); }
+.cproj__desc { font-size: var(--text-sm); color: var(--text-muted); margin-top: 2px; }
+
 // --- CV page (embedded PDF) -------------------------------------------------
 .cv-embed {
   width: 100%;

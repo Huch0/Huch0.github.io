@@ -55,6 +55,7 @@ def main():
         "profile": load("profile.yml"),
         "cv": load("cv.yml"),
         "publications": load("publications.yml"),
+        "projects": load("projects.yml"),
     }
     rendered = env.get_template("cv.tex.j2").render(**ctx)
     out = os.path.join(CVDIR, "cv.tex")

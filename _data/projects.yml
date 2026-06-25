@@ -1,25 +1,83 @@
-# Projects — work done OUTSIDE a publication effort (curated, not every repo).
-# Research that led to a paper belongs in publications.yml, not here.
-# Link types: code, demo, project, etc. url "TODO" shows a dashed placeholder.
+# Projects — work done OUTSIDE a publication effort (research that led to a paper
+# belongs in publications.yml). Grouped: featured / mentoring / class_projects.
+# Link types render as labels; url "TODO" shows a dashed placeholder button.
 
-- name: DeepCatch Agent
-  award: "1st place · 2025 POSTECH Digital Twin Chatbot Hackathon"
-  role: "Team project with Jun Seo (equal contribution)"
-  description: >-
-    An AI telephone-reservation assistant for fishing tourists in Pohang's Guryongpo: it
-    gathers weather and catch data to recommend personalized fishing plans and automates
-    phone bookings with fishing establishments through Twilio voice calls.
-  stack: "LangGraph · FastAPI · Twilio · OpenAI Realtime API · Socket.IO · Next.js / TypeScript"
-  links:
-    - { type: code,     url: "https://github.com/sjin4861/deepcatch-agent" }
-    - { type: LinkedIn, url: "https://www.linkedin.com/posts/chiyeong-heo_hackathon-ai-chatbot-ugcPost-7378249881687281664-FaDv/" }
+# Substantial, self-contained projects.
+featured:
+  - name: DeepCatch Agent
+    award: "1st place · 2025 POSTECH Digital Twin Chatbot Hackathon"
+    role: "Team project with Jun Seo (equal contribution)"
+    description: >-
+      An AI telephone-reservation assistant for fishing tourists in Pohang's Guryongpo: it
+      gathers weather and catch data to recommend personalized fishing plans and automates
+      phone bookings with fishing establishments through Twilio voice calls.
+    stack: "LangGraph · FastAPI · Twilio · OpenAI Realtime API · Socket.IO · Next.js / TypeScript"
+    links:
+      - { type: code,     url: "https://github.com/sjin4861/deepcatch-agent" }
+      - { type: LinkedIn, url: "https://www.linkedin.com/posts/chiyeong-heo_hackathon-ai-chatbot-ugcPost-7378249881687281664-FaDv/" }
 
-- name: Project Einstein
-  role: "Team project with Jun Seo"
-  description: >-
-    An interactive physics-education platform that converts physics diagrams into animated
-    simulations with AI-agent tutoring, combining computer vision, AI agents, and real-time
-    simulation to help students learn mechanical systems visually.
-  stack: "Next.js · React · Matter.js · FastAPI · OpenAI API · Pillow"
-  links:
-    - { type: code, url: "https://github.com/Huch0/Project-Einstein" }
+  - name: Project Einstein
+    role: "Team project with Jun Seo"
+    description: >-
+      An interactive physics-education platform that converts physics diagrams into animated
+      simulations with AI-agent tutoring, combining computer vision, AI agents, and real-time
+      simulation to help students learn mechanical systems visually.
+    stack: "Next.js · React · Matter.js · FastAPI · OpenAI API · Pillow"
+    links:
+      - { type: code, url: "https://github.com/Huch0/Project-Einstein" }
+
+# Teaching / mentoring.
+mentoring:
+  - name: "IBE Mentoring Program — Mentor"
+    role: "2024"
+    description: >-
+      Taught reinforcement-learning fundamentals to first- and second-year students:
+      implemented and visualized policy and value iteration, and built a custom RL
+      environment (Apple Game) with OpenAI Gymnasium.
+    links:
+      - { type: code, url: "https://github.com/Huch0/Mentoring-RL-Env" }
+
+# Coursework, grouped by CS subfield.
+class_projects:
+  - subfield: "Machine Learning & AI"
+    items:
+      - name: "Dong Baek Jeon Transaction Data Analysis"
+        course: "Data Mining"
+        description: "K-means clustering of Busan local-currency transaction data to surface local economic patterns."
+        links:
+          - { type: code, url: "https://github.com/Huch0/DongBaekJeon-DataAnalysis" }
+      - name: "Celebrity Look-Alike Finder"
+        course: "Cloud Computing"
+        description: "An AI service using AWS Rekognition to find celebrity look-alikes; backend processing, API handling, and image ingestion."
+        links:
+          - { type: code, url: "https://github.com/Huch0/Cloud-Computing-Term-Project-17" }
+
+  - subfield: "Embedded Systems"
+    items:
+      - name: "Human-Detecting Lifesaving 4WD Robot"
+        course: "Embedded System Design & Lab"
+        description: "Firmware for a robot that detects people via PIR/ultrasonic sensors and communicates over Bluetooth (Cortex-M3 STM32F107, ESP32-CAM, L298N motor driver)."
+        links:
+          - { type: code, url: "https://github.com/Huch0/lifesavingRobot" }
+
+  - subfield: "Software Development"
+    items:
+      - name: "Zombie Survival FPS Game"
+        course: "Computer Graphics"
+        description: "A 3D Unity game with NavMesh and rigidbody physics: player control, zombie AI, stage systems, and weapons."
+        links:
+          - { type: code, url: "https://github.com/Huch0/zombie-survival" }
+      - name: "Hangman Android Game"
+        course: "Computer Software Design & Lab"
+        description: "A Kotlin Android game with difficulty levels, sound effects, and a Firebase Firestore ranking system."
+        # links: TODO — confirm repo
+      - name: "Graduate School Lab Database"
+        course: "Database"
+        description: "A contact-management and social web app with Next.js, Sequelize, and PostgreSQL; React UI and database transaction logic."
+        links:
+          - { type: code, url: "https://github.com/Huch0/db_project" }
+      - name: "Hangman Logic Circuit Design"
+        course: "Logic Circuit Design & Lab"
+        description: "Hangman implemented as a digital circuit on an FPGA (Intel Quartus): keypad input, 7-segment display, and piezo output."
+        links:
+          - { type: code, url: "https://github.com/Huch0/LogicCircuitDesignAndExperiment" }
