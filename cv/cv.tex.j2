@@ -35,12 +35,6 @@
 ((* for l in profile.links *)) \textbullet{} \href{((( l.url )))}{((( l.name | tex )))}((* endfor *))%
 }
 
-% ---------- Research interests ----------
-((* if cv.research_interests *))
-\section*{Research Interests}
-((* for ri in cv.research_interests *))((( ri | tex )))((* if not loop.last *)), ((* endif *))((* endfor *))
-((* endif *))
-
 % ---------- Education ----------
 ((* set edu = cv.education | selectattr('todo', 'undefined') | list *))
 ((* if edu *))
@@ -48,18 +42,6 @@
 ((* for e in edu *))
 \textbf{((( e.degree | tex )))} \hfill {\color{muted}((( e.dates | tex )))}\\
 ((( e.institution | tex )))((* if e.location *)) \textbullet{} ((( e.location | tex )))((* endif *))((* if e.note *))\\ {\color{muted}((( e.note | tex )))}((* endif *))
-\vspace{6pt}
-
-((* endfor *))
-((* endif *))
-
-% ---------- Experience ----------
-((* set exp = cv.experience | selectattr('todo', 'undefined') | list *))
-((* if exp *))
-\section*{Experience}
-((* for x in exp *))
-\textbf{((( x.title | tex )))} \hfill {\color{muted}((( x.dates | tex )))}\\
-((( x.organization | tex )))((* if x.location *)) \textbullet{} ((( x.location | tex )))((* endif *))((* if x.note *))\\ {\color{muted}((( x.note | tex )))}((* endif *))
 \vspace{6pt}
 
 ((* endfor *))

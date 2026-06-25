@@ -145,6 +145,24 @@
   margin: 0 0 var(--space-4);
 }
 
+// Section headers get an accent underline tab for clear separation.
+.content h2 {
+  margin-top: var(--space-7);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-2);
+  border-bottom: var(--border-w) solid var(--border);
+  position: relative;
+}
+.content h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 2.25rem;
+  height: 2px;
+  background: var(--accent);
+}
+
 // --- Research interests as quiet tags --------------------------------------
 .taglist { display: flex; flex-wrap: wrap; gap: var(--space-2); padding: 0; list-style: none; margin: 0 0 var(--space-4); }
 .tag {
@@ -156,8 +174,15 @@
   border-radius: 999px;
 }
 
-// --- Generic entry list (education, experience, awards, news, patents) ------
-.entry { margin-bottom: var(--space-4); }
+// --- Generic entry CARD (education, awards, patents) ------------------------
+.entry {
+  background: var(--surface);
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-3);
+  box-shadow: var(--shadow);
+}
 .entry__head { display: flex; justify-content: space-between; gap: var(--space-3); flex-wrap: wrap; }
 .entry__title { font-weight: 700; }
 .entry__date { color: var(--text-muted); font-size: var(--text-sm); white-space: nowrap; font-family: var(--font-mono); }
@@ -174,7 +199,7 @@
   margin-bottom: var(--space-4);
   box-shadow: var(--shadow);
 }
-.pub--compact { background: transparent; border: 0; box-shadow: none; padding: var(--space-3) 0; border-bottom: var(--border-w) solid var(--border); border-radius: 0; }
+.pub--compact { margin-bottom: var(--space-3); } // same card as .pub; abstract hidden via Liquid
 .pub__title { font-weight: 700; font-size: 1.05rem; margin: 0 0 var(--space-1); }
 .pub__authors { font-size: var(--text-sm); color: var(--text-muted); margin-bottom: var(--space-1); }
 .pub__authors .me { color: var(--text); font-weight: 700; }

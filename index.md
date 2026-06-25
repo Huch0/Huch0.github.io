@@ -9,7 +9,6 @@ permalink: /
 
 {{ cv.bio | markdownify }}
 
-<h2>Research interests</h2>
 <ul class="taglist">
   {%- for ri in cv.research_interests %}
   <li class="tag">{{ ri }}</li>
@@ -32,21 +31,11 @@ permalink: /
   {%- endif %}
 {%- endfor %}
 
-<h2>Experience</h2>
-{%- for x in cv.experience %}
-  {%- if x.todo %}
-<p class="todo">TODO — {{ x.note }}</p>
-  {%- else %}
-<div class="entry">
-  <div class="entry__head">
-    <span class="entry__title">{{ x.title }}</span>
-    <span class="entry__date">{{ x.dates }}</span>
-  </div>
-  <div class="entry__sub">{{ x.organization }}{% if x.location %} · {{ x.location }}{% endif %}</div>
-  {%- if x.note %}<div class="entry__note">{{ x.note }}</div>{% endif %}
-</div>
-  {%- endif %}
+<h2>Publications</h2>
+{%- for pub in site.data.publications %}
+{% include publication.html pub=pub compact=true %}
 {%- endfor %}
+<p style="margin-top:1rem;"><a href="{{ '/publications/' | relative_url }}">All publications &rarr;</a></p>
 
 <h2>Patents</h2>
 {%- for pt in cv.patents %}
@@ -77,9 +66,3 @@ permalink: /
 </div>
   {%- endif %}
 {%- endfor %}
-
-<h2>Publications</h2>
-{%- for pub in site.data.publications %}
-{% include publication.html pub=pub compact=true %}
-{%- endfor %}
-<p style="margin-top:1rem;"><a href="{{ '/publications/' | relative_url }}">All publications &rarr;</a></p>

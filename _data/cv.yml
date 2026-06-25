@@ -9,15 +9,12 @@ bio: >-
   agents that can operate over persistent workspaces, interact with tools, and solve tasks
   grounded in complex real-world artifacts such as code, documents, images, audio, and video.
 
+# Kept short on purpose (3–4 reads cleanest on the profile).
 research_interests:
   - Agentic AI
-  - Computer-use agents
-  - Terminal & CLI/API-based agents
+  - Computer-use & terminal agents
   - Multimodal agents
-  - Agent harness design
-  - Benchmark construction & evaluation
-  - Multimedia-file workflows for AI agents
-  - AI agents for document editing & knowledge work
+  - Agent benchmarks & harness design
 
 education:
   - degree: "M.S. in Artificial Intelligence"
@@ -26,15 +23,12 @@ education:
     dates: "2025 – Present"
     note: "Machine Learning Lab · Advisor: Prof. Jungseul Ok"
   - todo: true
-    note: "Undergraduate degree, institution, major, and dates (paste from LinkedIn)."
-
-experience:
-  - todo: true
-    note: "Internships, research/teaching assistantships, or positions."
+    note: "Undergraduate B.S. at Pusan National University — confirm degree, major, and years."
 
 awards:
-  - todo: true
-    note: "Scholarships, fellowships, competition prizes. (DeepCatch Agent 1st place is listed under Projects.)"
+  - title: "1st Place (Grand Prize), POSTECH Digital Twin Chatbot Hackathon"
+    date: "2025"
+    note: "Team project (DeepCatch Agent) with Jun Seo"
 
 patents:
   - title_en: "Method and Program for Automated Production Planning Considering Factory Equipment and Operation Status"
