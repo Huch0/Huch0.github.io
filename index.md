@@ -49,7 +49,6 @@ permalink: /
 {%- for pub in site.data.publications %}
 {% include publication.html pub=pub compact=true %}
 {%- endfor %}
-<p style="margin-top:1rem;"><a href="{{ '/publications/' | relative_url }}">All publications &rarr;</a></p>
 
 <h2>Patents</h2>
 {%- for pt in cv.patents %}

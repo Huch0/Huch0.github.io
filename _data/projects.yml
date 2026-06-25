@@ -16,16 +16,6 @@ featured:
       - { type: code,     url: "https://github.com/sjin4861/deepcatch-agent" }
       - { type: LinkedIn, url: "https://www.linkedin.com/posts/chiyeong-heo_hackathon-ai-chatbot-ugcPost-7378249881687281664-FaDv/" }
 
-  - name: Project Einstein
-    role: "Team project with Jun Seo"
-    description: >-
-      An interactive physics-education platform that converts physics diagrams into animated
-      simulations with AI-agent tutoring, combining computer vision, AI agents, and real-time
-      simulation to help students learn mechanical systems visually.
-    stack: "Next.js · React · Matter.js · FastAPI · OpenAI API · Pillow"
-    links:
-      - { type: code, url: "https://github.com/Huch0/Project-Einstein" }
-
 # Teaching / mentoring.
 mentoring:
   - name: "IBE Mentoring Program — Mentor"
@@ -41,6 +31,10 @@ mentoring:
 class_projects:
   - subfield: "Machine Learning & AI"
     items:
+      - name: "Project Einstein"
+        description: "An interactive physics-education platform that turns physics diagrams into animated simulations with AI-agent tutoring (computer vision + AI agents + real-time simulation). Team project with Jun Seo."
+        links:
+          - { type: code, url: "https://github.com/Huch0/Project-Einstein" }
       - name: "Dong Baek Jeon Transaction Data Analysis"
         course: "Data Mining"
         description: "K-means clustering of Busan local-currency transaction data to surface local economic patterns."
