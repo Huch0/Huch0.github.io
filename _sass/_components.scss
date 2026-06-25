@@ -83,6 +83,41 @@
 .fontmenu .opt-serif  { font-family: var(--font-serif); }
 .fontmenu .opt-system { font-family: var(--font-system); }
 
+// Accent color switcher
+.accent-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: block;
+}
+.colormenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--bg);
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: var(--space-3);
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-2);
+}
+.colormenu[data-open="true"] { display: grid; }
+.colormenu .swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: var(--dot);
+  cursor: pointer;
+  padding: 0;
+  transition: transform var(--transition);
+}
+.colormenu .swatch:hover { transform: scale(1.12); }
+.colormenu .swatch[aria-checked="true"] { border-color: var(--text); }
+
 // --- Profile card -----------------------------------------------------------
 .profile__photo {
   width: 100%;

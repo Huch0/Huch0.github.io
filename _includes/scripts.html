@@ -56,5 +56,43 @@
     });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
   }
+
+  // --- Accent color switcher ----------------------------------------------
+  var colorBtn = document.getElementById('color-toggle');
+  var colorMenu = document.getElementById('color-menu');
+  function syncColorChecks() {
+    var cur = root.getAttribute('data-accent') || 'teal';
+    if (!colorMenu) return;
+    colorMenu.querySelectorAll('[data-accent-choice]').forEach(function (b) {
+      b.setAttribute('aria-checked', b.getAttribute('data-accent-choice') === cur ? 'true' : 'false');
+    });
+  }
+  syncColorChecks();
+  function closeColorMenu() {
+    if (!colorMenu) return;
+    colorMenu.setAttribute('data-open', 'false');
+    colorBtn.setAttribute('aria-expanded', 'false');
+  }
+  if (colorBtn && colorMenu) {
+    colorBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = colorMenu.getAttribute('data-open') === 'true';
+      colorMenu.setAttribute('data-open', open ? 'false' : 'true');
+      colorBtn.setAttribute('aria-expanded', open ? 'false' : 'true');
+    });
+    colorMenu.querySelectorAll('[data-accent-choice]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var choice = b.getAttribute('data-accent-choice');
+        root.setAttribute('data-accent', choice);
+        try { localStorage.setItem('accent', choice); } catch (e) {}
+        syncColorChecks();
+        closeColorMenu();
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (!colorMenu.contains(e.target) && e.target !== colorBtn && !colorBtn.contains(e.target)) closeColorMenu();
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeColorMenu(); });
+  }
 })();
 </script>

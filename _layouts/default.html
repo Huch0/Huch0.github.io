@@ -9,9 +9,12 @@
         var d = document.documentElement;
         d.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
         d.setAttribute('data-font', localStorage.getItem('font') || 'sans');
+        d.setAttribute('data-accent', localStorage.getItem('accent') || 'teal');
       } catch (e) {
-        document.documentElement.setAttribute('data-theme', 'light');
-        document.documentElement.setAttribute('data-font', 'sans');
+        var d2 = document.documentElement;
+        d2.setAttribute('data-theme', 'light');
+        d2.setAttribute('data-font', 'sans');
+        d2.setAttribute('data-accent', 'teal');
       }
     })();
   </script>

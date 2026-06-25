@@ -56,9 +56,9 @@
   --surface-2:   #eef0f4;   // hover / nested
   --text:        #16181d;
   --text-muted:  #5b6270;
-  --border:      #e6e3ec;
-  --accent:      #6d28d9;   // links, active states — distinctive violet
-  --accent-soft: #f1ecfe;   // tag / badge background
+  --border:      #e5e7eb;
+  --accent:      #0f766e;   // links, active states — teal (default)
+  --accent-soft: #d8f2ee;   // tag / badge background
   --shadow:      0 1px 2px rgba(16, 18, 22, 0.04);
 }
 
@@ -74,8 +74,35 @@ html[data-theme="dark"] {
   --surface-2:   #1f232c;
   --text:        #e7e9ee;
   --text-muted:  #99a1b0;
-  --border:      #2b2933;
-  --accent:      #b794f6;   // lighter violet for contrast on dark
-  --accent-soft: #271a44;
+  --border:      #272c36;
+  --accent:      #5ad1c4;   // lighter teal for contrast on dark
+  --accent-soft: #0c3b36;
   --shadow:      0 1px 2px rgba(0, 0, 0, 0.3);
 }
+
+// --- Reader-selectable accent colors (data-accent) ---------------------------
+// Each color defines a light variant and a [data-theme="dark"] variant.
+// Default (no attribute) is teal, set in :root / dark above.
+html[data-accent="teal"]      { --accent: #0f766e; --accent-soft: #d8f2ee; }
+html[data-accent="teal"][data-theme="dark"]      { --accent: #5ad1c4; --accent-soft: #0c3b36; }
+
+html[data-accent="burgundy"]  { --accent: #9d2449; --accent-soft: #fbe5eb; }
+html[data-accent="burgundy"][data-theme="dark"]  { --accent: #f0a3b8; --accent-soft: #3a1622; }
+
+html[data-accent="pine"]      { --accent: #166534; --accent-soft: #dcf3e3; }
+html[data-accent="pine"][data-theme="dark"]      { --accent: #6ee7a0; --accent-soft: #0f3a22; }
+
+html[data-accent="sienna"]    { --accent: #b4530e; --accent-soft: #fbe9da; }
+html[data-accent="sienna"][data-theme="dark"]    { --accent: #ef9d63; --accent-soft: #3a2414; }
+
+html[data-accent="indigo"]    { --accent: #4338ca; --accent-soft: #e7e6fb; }
+html[data-accent="indigo"][data-theme="dark"]    { --accent: #a5b4fc; --accent-soft: #1f1b4b; }
+
+html[data-accent="crimson"]   { --accent: #be123c; --accent-soft: #ffe1e7; }
+html[data-accent="crimson"][data-theme="dark"]   { --accent: #fb7185; --accent-soft: #3f1320; }
+
+html[data-accent="slate"]     { --accent: #2f4a8a; --accent-soft: #e6ebf7; }
+html[data-accent="slate"][data-theme="dark"]     { --accent: #93b0f0; --accent-soft: #18223f; }
+
+html[data-accent="plum"]      { --accent: #86328a; --accent-soft: #f6e6f7; }
+html[data-accent="plum"][data-theme="dark"]      { --accent: #d99ae0; --accent-soft: #34173a; }
