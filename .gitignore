@@ -25,3 +25,9 @@ cv/cv.pdf
 .DS_Store
 .idea
 .vscode
+
+# Local-only dev/agent docs — kept out of the public repo (repo is public)
+CLAUDE.md
+AGENTS.md
+CONTEXT.md
+docs/
