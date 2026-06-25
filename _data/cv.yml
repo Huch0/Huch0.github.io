@@ -22,13 +22,19 @@ education:
     location: "Pohang, South Korea"
     dates: "2025 – Present"
     note: "Machine Learning Lab · Advisor: Prof. Jungseul Ok"
-  - todo: true
-    note: "Undergraduate B.S. at Pusan National University — confirm degree, major, and years."
+  - degree: "B.S. in Computer Science and Engineering"
+    institution: "Pusan National University"
+    location: "Busan, South Korea"
+    dates: "2020 – 2025"
+    note: "School of Computer Science and Engineering, College of Information and Bio-Medical Engineering"
 
 awards:
   - title: "1st Place (Grand Prize), POSTECH Digital Twin Chatbot Hackathon"
     date: "2025"
     note: "Team project (DeepCatch Agent) with Jun Seo"
+  - title: "University & Foundation Scholarships"
+    date: "2020 – 2025"
+    note: "Pusan National University"
 
 patents:
   - title_en: "Method and Program for Automated Production Planning Considering Factory Equipment and Operation Status"
