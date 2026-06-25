@@ -27,8 +27,22 @@ permalink: /
   </div>
   <div class="entry__sub">{{ e.institution }}{% if e.location %} · {{ e.location }}{% endif %}</div>
   {%- if e.note %}<div class="entry__note">{{ e.note }}</div>{% endif %}
+  {%- if e.gpa %}<div class="entry__note">{{ e.gpa }}</div>{% endif %}
+  {%- if e.honors %}<div class="entry__note"><strong>{{ e.honors }}</strong></div>{% endif %}
 </div>
   {%- endif %}
+{%- endfor %}
+
+<h2>Experience</h2>
+{%- for x in cv.experience %}
+<div class="entry">
+  <div class="entry__head">
+    <span class="entry__title">{{ x.title }}</span>
+    <span class="entry__date">{{ x.dates }}</span>
+  </div>
+  <div class="entry__sub">{{ x.organization }}{% if x.location %} · {{ x.location }}{% endif %}</div>
+  {%- if x.note %}<div class="entry__note">{{ x.note }}</div>{% endif %}
+</div>
 {%- endfor %}
 
 <h2>Publications</h2>

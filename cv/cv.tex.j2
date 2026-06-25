@@ -41,7 +41,19 @@
 \section*{Education}
 ((* for e in edu *))
 \textbf{((( e.degree | tex )))} \hfill {\color{muted}((( e.dates | tex )))}\\
-((( e.institution | tex )))((* if e.location *)) \textbullet{} ((( e.location | tex )))((* endif *))((* if e.note *))\\ {\color{muted}((( e.note | tex )))}((* endif *))
+((( e.institution | tex )))((* if e.location *)) \textbullet{} ((( e.location | tex )))((* endif *))((* if e.note *))\\ {\color{muted}((( e.note | tex )))}((* endif *))((* if e.gpa *))\\ {\color{muted}((( e.gpa | tex )))}((* endif *))((* if e.honors *))\\ \textbf{((( e.honors | tex )))}((* endif *))
+\vspace{6pt}
+
+((* endfor *))
+((* endif *))
+
+% ---------- Experience ----------
+((* set exp = cv.experience | default([]) | selectattr('todo', 'undefined') | list *))
+((* if exp *))
+\section*{Experience}
+((* for x in exp *))
+\textbf{((( x.title | tex )))} \hfill {\color{muted}((( x.dates | tex )))}\\
+((( x.organization | tex )))((* if x.location *)) \textbullet{} ((( x.location | tex )))((* endif *))((* if x.note *))\\ {\color{muted}((( x.note | tex )))}((* endif *))
 \vspace{6pt}
 
 ((* endfor *))

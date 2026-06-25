@@ -27,6 +27,15 @@ education:
     location: "Busan, South Korea"
     dates: "2020 – 2025"
     note: "School of Computer Science and Engineering, College of Information and Bio-Medical Engineering"
+    gpa: "Cumulative GPA 4.25 / 4.50 · Major GPA 4.30 · Rank 4 / 53"
+    honors: "Summa Cum Laude · President's List"
+
+experience:
+  - title: "Research Intern, KAIST AI Research Internship (KAIRI)"
+    organization: "Cognitive Learning for Vision and Robotics (CLVR) Lab, KAIST"
+    location: "Seoul, South Korea"
+    dates: "2024"
+    note: "Reinforcement learning research on reward design using Vision-Language Models (VLMs)."
 
 awards:
   - title: "1st Place (Grand Prize), POSTECH Digital Twin Chatbot Hackathon"
