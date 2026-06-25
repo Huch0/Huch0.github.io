@@ -1,9 +1,9 @@
-# Bundler cache
+# Bundler
 .bundle
 vendor
 Gemfile.lock
 
-# Jekyll cache
+# Jekyll
 .jekyll-cache
 .jekyll-metadata
 _site
@@ -11,15 +11,17 @@ _site
 # RubyGems
 *.gem
 
-# NPM dependencies
-node_modules
-package-lock.json
+# CV LaTeX build artifacts (cv.pdf is published to assets/files/, not here)
+cv/cv.tex
+cv/cv.aux
+cv/cv.log
+cv/cv.out
+cv/cv.pdf
 
-# IDE configurations
+# Personal source documents (the CV is authored from _data, not the docx)
+*.docx
+
+# OS / editor
+.DS_Store
 .idea
-.vscode/*
-!.vscode/settings.json
-!.vscode/extensions.json
-!.vscode/tasks.json
-
-# Misc
+.vscode

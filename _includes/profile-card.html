@@ -1,0 +1,40 @@
+{%- assign p = site.data.profile -%}
+<div class="profile">
+  <img class="profile__photo" src="{{ p.photo | relative_url }}" alt="{{ p.name }}">
+  <h1 class="profile__name">{{ p.name }}</h1>
+  {%- if p.name_kr %}<div class="profile__name-kr">{{ p.name_kr }}</div>{% endif -%}
+
+  {%- if p.role %}<p class="profile__meta"><strong>{{ p.role }}</strong></p>{% endif -%}
+  {%- for line in p.affiliation_lines %}
+  <p class="profile__meta">{{ line }}</p>
+  {%- endfor -%}
+  {%- if p.advisor %}
+  <p class="profile__meta">Advised by
+    {%- if p.advisor.url %} <a href="{{ p.advisor.url }}">{{ p.advisor.name }}</a>
+    {%- else %} {{ p.advisor.name }}{% endif -%}
+  </p>
+  {%- endif -%}
+  {%- if p.email %}
+  <p class="profile__meta"><a href="mailto:{{ p.email }}">{{ p.email }}</a></p>
+  {%- endif -%}
+
+  <div class="profile__links">
+    {%- for l in p.links %}
+    <a class="iconlink" href="{{ l.url }}" title="{{ l.name }}" aria-label="{{ l.name }}"
+       {% unless l.url contains "mailto" %}target="_blank" rel="noopener"{% endunless %}>
+      {% include icon.html name=l.icon %}
+    </a>
+    {%- endfor -%}
+    {%- if p.email %}
+    <a class="iconlink" href="mailto:{{ p.email }}" title="Email" aria-label="Email">
+      {% include icon.html name="email" %}
+    </a>
+    {%- endif -%}
+  </div>
+
+  {%- if p.cv %}
+  <a class="btn-cv" href="{{ p.cv | relative_url }}" target="_blank" rel="noopener">
+    {% include icon.html name="cv" %} Curriculum Vitae
+  </a>
+  {%- endif -%}
+</div>

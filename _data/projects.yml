@@ -1,0 +1,24 @@
+# Projects — work done OUTSIDE a publication effort (curated, not every repo).
+# Research that led to a paper belongs in publications.yml, not here.
+# Link types: code, demo, project, etc. url "TODO" shows a dashed placeholder.
+
+- name: DeepCatch Agent
+  award: "1st place · 2025 POSTECH Digital Twin Chatbot Hackathon"
+  role: "Team project with Jun Seo (equal contribution)"
+  description: >-
+    An AI telephone-reservation assistant for fishing tourists in Pohang's Guryongpo: it
+    gathers weather and catch data to recommend personalized fishing plans and automates
+    phone bookings with fishing establishments through Twilio voice calls.
+  stack: "LangGraph · FastAPI · Twilio · OpenAI Realtime API · Socket.IO · Next.js / TypeScript"
+  links:
+    - { type: code, url: "https://github.com/sjin4861/deepcatch-agent" }
+
+- name: Project Einstein
+  role: "Team project with Jun Seo"
+  description: >-
+    An interactive physics-education platform that converts physics diagrams into animated
+    simulations with AI-agent tutoring, combining computer vision, AI agents, and real-time
+    simulation to help students learn mechanical systems visually.
+  stack: "Next.js · React · Matter.js · FastAPI · OpenAI API · Pillow"
+  links:
+    - { type: code, url: "https://github.com/Huch0/Project-Einstein" }

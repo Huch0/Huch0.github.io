@@ -1,0 +1,21 @@
+<div class="controls">
+  <button class="ctrl-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+    <span data-theme-icon="light">{% include icon.html name="sun" %}</span>
+    <span data-theme-icon="dark" hidden>{% include icon.html name="moon" %}</span>
+  </button>
+
+  <button class="ctrl-btn" id="font-toggle" type="button" aria-haspopup="true" aria-expanded="false"
+          aria-label="Choose reading font" title="Reading font">Aa</button>
+
+  <div class="fontmenu" id="font-menu" role="menu" aria-label="Reading font">
+    <button role="menuitemradio" data-font-choice="sans"   aria-checked="true">
+      <span class="opt-sans">Atkinson</span><span class="sample">accessible</span>
+    </button>
+    <button role="menuitemradio" data-font-choice="serif"  aria-checked="false">
+      <span class="opt-serif">Source Serif</span><span class="sample">reading</span>
+    </button>
+    <button role="menuitemradio" data-font-choice="system" aria-checked="false">
+      <span class="opt-system">System</span><span class="sample">native</span>
+    </button>
+  </div>
+</div>

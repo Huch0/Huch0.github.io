@@ -1,84 +1,86 @@
-<!-- markdownlint-disable-next-line -->
-<div align="center">
+# Chiyeong Heo — Academic Homepage
 
-  <!-- markdownlint-disable-next-line -->
-  # Chirpy Jekyll Theme
+A clean, data-driven academic homepage built with **plain Jekyll** (no theme gem) and
+deployed to GitHub Pages. All personal facts live in `_data/*.yml` as a **single source of
+truth**; the website pages and the **LaTeX CV** are both generated from it, so they never
+drift apart.
 
-  A minimal, responsive, and feature-rich Jekyll theme for technical writing.
+Live at **https://huch0.github.io**.
 
-  [![CI](https://img.shields.io/github/actions/workflow/status/cotes2020/jekyll-theme-chirpy/ci.yml?logo=github)][ci]&nbsp;
-  [![Codacy Badge](https://img.shields.io/codacy/grade/4e556876a3c54d5e8f2d2857c4f43894?logo=codacy)][codacy]&nbsp;
-  [![GitHub license](https://img.shields.io/github/license/cotes2020/jekyll-theme-chirpy?color=goldenrod)][license]&nbsp;
-  [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy?&logo=RubyGems&logoColor=ghostwhite&label=gem&color=orange)][gem]&nbsp;
-  [![Open in Dev Containers](https://img.shields.io/badge/Dev_Containers-Open-deepskyblue?logo=linuxcontainers)][open-container]
+## Run locally
 
-  [**Live Demo** →][demo]
+Requires **Ruby 3.x** (via `rbenv`/`chruby`/Homebrew — the macOS system Ruby 2.6 is too old).
 
-  [![Devices Mockup](https://chirpy-img.netlify.app/commons/devices-mockup.png)][demo]
+```bash
+bundle install      # first time only
+make serve          # http://127.0.0.1:4000  (live reload)
+# or: make build    # one-off build into _site/
+```
 
-</div>
+## Edit content (no HTML needed)
 
-## Features
+Everything is in `_data/`:
 
-- Dark Theme
-- Localized UI language
-- Pinned Posts on Home Page
-- Hierarchical Categories
-- Trending Tags
-- Table of Contents
-- Last Modified Date
-- Syntax Highlighting
-- Mathematical Expressions
-- Mermaid Diagrams & Flowcharts
-- Dark Mode Images
-- Embed Media
-- Comment Systems
-- Built-in Search
-- Atom Feeds
-- PWA
-- Web Analytics
-- SEO & Performance Optimization
+| File | Controls |
+|------|----------|
+| `_data/profile.yml` | profile card: name, affiliation, advisor, email, social links, photo, CV link |
+| `_data/publications.yml` | publications (About + Publications pages **and** the CV) |
+| `_data/projects.yml` | the Projects page |
+| `_data/cv.yml` | bio, research interests, education, experience, patents, awards (About page **and** the CV) |
 
-## Documentation
+Conventions:
+- **Author highlighting:** in a publication's `authors`, set `me: true` to bold your name and
+  `eq: true` to add an equal-contribution dagger (†). Names are kept exactly as published.
+- **Placeholders:** mark unknown items with `todo: true` — they render as an italic note on the
+  web and are omitted from the PDF, so nothing unverified is ever published.
+- **Links:** a link with `url: "TODO"` renders a dashed, non-clickable placeholder button.
 
-To learn how to use, develop, and upgrade the project, please refer to the [Wiki][wiki].
+Replace the placeholder headshot by overwriting `assets/img/profile.jpg`.
 
-## Contributing
+## Regenerate the CV (PDF)
 
-Contributions (_pull requests_, _issues_, and _discussions_) are what make the open-source community such an amazing place
-to learn, inspire, and create. Any contributions you make are greatly appreciated.
-For details, see the "[Contributing Guidelines][contribute-guide]".
+The CV is **generated from the same YAML**, not hand-written. Edit `_data/cv.yml` /
+`_data/publications.yml`, then:
 
-## Credits
+```bash
+make cv     # _data/*.yml -> cv/cv.tex (Python+Jinja2) -> assets/files/cv.pdf (XeLaTeX)
+```
 
-### Contributors
+Requires **Python 3** (`pyyaml`, `jinja2`) and **XeLaTeX**. The Atkinson Hyperlegible font is
+bundled in `cv/fonts/`, so the build is self-contained. Commit the regenerated
+`assets/files/cv.pdf`. Style lives in `cv/cv.tex.j2` (edit only to restyle, never for facts).
 
-Thanks to [all the contributors][contributors] involved in the development of the project!
+## Restyle the design
 
-[![all-contributors](https://contrib.rocks/image?repo=cotes2020/jekyll-theme-chirpy&columns=16)][contributors]
-<sub> — Made with [contrib.rocks](https://contrib.rocks)</sub>
+All colors (light + dark), fonts, spacing, and sizing are CSS variables in **one file**:
+`_sass/_tokens.scss`. Change the look there without touching any markup. Readers can switch
+font (Atkinson / Source Serif / System) and light/dark from the top bar; choices persist.
 
-### Third-Party Assets
+## Deployment
 
-This project is built on the [Jekyll][jekyllrb] ecosystem and some [great libraries][lib], and is developed using [VS Code][vscode] as well as tools provided by [JetBrains][jetbrains] under a non-commercial open-source software license.
+Pushing to `master` triggers `.github/workflows/pages-deploy.yml`, which builds the site with
+Jekyll (Ruby 3.3, `JEKYLL_ENV=production`) and publishes it to GitHub Pages. No manual steps.
 
-The avatar and favicon for the project's website are from [ClipartMAX][clipartmax].
+## Outstanding TODOs
 
-## License
+- Undergraduate education in `_data/cv.yml`
+- Experience and Awards & Honors in `_data/cv.yml`
+- MMTB `code` / `dataset` URLs in `_data/publications.yml`
+- Real headshot at `assets/img/profile.jpg`
+- Run `make cv` once your real CV content is in (current PDF is generated from the scaffold)
 
-This project is published under [MIT License][license].
+## Layout
 
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[ci]: https://github.com/cotes2020/jekyll-theme-chirpy/actions/workflows/ci.yml?query=event%3Apush+branch%3Amaster
-[codacy]: https://app.codacy.com/gh/cotes2020/jekyll-theme-chirpy/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade
-[license]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE
-[open-container]: https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/cotes2020/jekyll-theme-chirpy
-[jekyllrb]: https://jekyllrb.com/
-[clipartmax]: https://www.clipartmax.com/middle/m2i8b1m2K9Z5m2K9_ant-clipart-childrens-ant-cute/
-[demo]: https://cotes2020.github.io/chirpy-demo/
-[wiki]: https://github.com/cotes2020/jekyll-theme-chirpy/wiki
-[contribute-guide]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/docs/CONTRIBUTING.md
-[contributors]: https://github.com/cotes2020/jekyll-theme-chirpy/graphs/contributors
-[lib]: https://github.com/cotes2020/chirpy-static-assets
-[vscode]: https://code.visualstudio.com/
-[jetbrains]: https://www.jetbrains.com/?from=jekyll-theme-chirpy
+```
+_data/        single source of truth (YAML)
+_layouts/     base HTML document
+_includes/    profile card, nav, controls, publication/project partials, icons
+_sass/        _tokens.scss (design system) + base/layout/components
+assets/       css, bib, favicons, files/cv.pdf, img/profile.jpg
+cv/           LaTeX CV pipeline: cv.tex.j2 (template) + generate_cv.py + fonts/
+docs/adr/     architecture decision records
+index.md publications.md projects.md cv.md
+```
+
+Built on the old Chirpy blog's history — the previous site is preserved on the
+`backup/chirpy-blog` branch and the `chirpy-archive` tag.

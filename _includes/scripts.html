@@ -1,0 +1,60 @@
+<script>
+(function () {
+  var root = document.documentElement;
+
+  // --- Theme toggle --------------------------------------------------------
+  var themeBtn = document.getElementById('theme-toggle');
+  function paintThemeIcon() {
+    var dark = root.getAttribute('data-theme') === 'dark';
+    document.querySelectorAll('[data-theme-icon="light"]').forEach(function (e) { e.hidden = dark; });
+    document.querySelectorAll('[data-theme-icon="dark"]').forEach(function (e) { e.hidden = !dark; });
+  }
+  paintThemeIcon();
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      paintThemeIcon();
+    });
+  }
+
+  // --- Font switcher -------------------------------------------------------
+  var fontBtn = document.getElementById('font-toggle');
+  var menu = document.getElementById('font-menu');
+  function syncFontChecks() {
+    var cur = root.getAttribute('data-font') || 'sans';
+    if (!menu) return;
+    menu.querySelectorAll('[data-font-choice]').forEach(function (b) {
+      b.setAttribute('aria-checked', b.getAttribute('data-font-choice') === cur ? 'true' : 'false');
+    });
+  }
+  syncFontChecks();
+  function closeMenu() {
+    if (!menu) return;
+    menu.setAttribute('data-open', 'false');
+    fontBtn.setAttribute('aria-expanded', 'false');
+  }
+  if (fontBtn && menu) {
+    fontBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = menu.getAttribute('data-open') === 'true';
+      menu.setAttribute('data-open', open ? 'false' : 'true');
+      fontBtn.setAttribute('aria-expanded', open ? 'false' : 'true');
+    });
+    menu.querySelectorAll('[data-font-choice]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var choice = b.getAttribute('data-font-choice');
+        root.setAttribute('data-font', choice);
+        try { localStorage.setItem('font', choice); } catch (e) {}
+        syncFontChecks();
+        closeMenu();
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (!menu.contains(e.target) && e.target !== fontBtn) closeMenu();
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+  }
+})();
+</script>

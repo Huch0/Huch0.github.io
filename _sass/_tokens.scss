@@ -1,0 +1,81 @@
+// ============================================================================
+//  DESIGN TOKENS — the single place to restyle the whole site.
+//  Everything else references these variables; nothing hard-codes a value.
+//  (See docs/adr/0002-centralized-design-tokens-for-swappable-styling.md)
+// ============================================================================
+
+:root {
+  // --- Font families ---------------------------------------------------------
+  // Korean glyphs (e.g. 허치영) fall back to Noto Sans KR in every stack.
+  --font-atkinson: "Atkinson Hyperlegible", "Noto Sans KR", system-ui, sans-serif;
+  --font-serif:    "Source Serif 4", "Noto Sans KR", Georgia, "Times New Roman", serif;
+  --font-system:   system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+  --font-mono:     "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  // The reader-selectable body font (default = Atkinson). The Aa switcher swaps
+  // this via html[data-font="..."] rules below.
+  --font-body: var(--font-atkinson);
+
+  // --- Type scale ------------------------------------------------------------
+  --text-base: 1.0625rem;   // 17px
+  --text-sm:   0.875rem;    // 14px
+  --text-xs:   0.78rem;     // ~12.5px
+  --text-lg:   1.25rem;     // 20px
+  --text-xl:   1.5rem;      // 24px
+  --text-2xl:  1.9rem;      // ~30px
+  --leading:   1.65;
+  --leading-tight: 1.25;
+
+  // --- Spacing scale ---------------------------------------------------------
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  // --- Layout ----------------------------------------------------------------
+  --content-max: 1040px;    // overall two-column width
+  --sidebar-w:   250px;     // fixed profile card column
+  --column-gap:  3.25rem;
+  --page-pad:    1.5rem;
+
+  // --- Shape -----------------------------------------------------------------
+  --radius:    12px;
+  --radius-sm: 7px;
+  --border-w:  1px;
+
+  // --- Motion (kept subtle by request: no flashy animation) ------------------
+  --transition: 0.18s ease;
+
+  // --- Colors: LIGHT (default) ----------------------------------------------
+  --bg:          #ffffff;
+  --surface:     #f6f7f9;   // profile card, publication/project cards
+  --surface-2:   #eef0f4;   // hover / nested
+  --text:        #16181d;
+  --text-muted:  #5b6270;
+  --border:      #e5e7eb;
+  --accent:      #2563eb;   // links, active states
+  --accent-soft: #eaf0ff;   // tag / badge background
+  --shadow:      0 1px 2px rgba(16, 18, 22, 0.04);
+}
+
+// --- Reader font choices (persisted by assets js) ----------------------------
+html[data-font="serif"]  { --font-body: var(--font-serif); }
+html[data-font="system"] { --font-body: var(--font-system); }
+html[data-font="sans"]   { --font-body: var(--font-atkinson); }
+
+// --- Colors: DARK ------------------------------------------------------------
+html[data-theme="dark"] {
+  --bg:          #0f1115;
+  --surface:     #171a21;
+  --surface-2:   #1f232c;
+  --text:        #e7e9ee;
+  --text-muted:  #99a1b0;
+  --border:      #272c36;
+  --accent:      #7d9bff;
+  --accent-soft: #1b2438;
+  --shadow:      0 1px 2px rgba(0, 0, 0, 0.3);
+}

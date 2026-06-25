@@ -1,0 +1,50 @@
+# CV facts — single source of truth for the About-page sections AND the LaTeX CV.
+# Mark unknown items with `todo: true` (renders an italic placeholder, never invented data).
+
+bio: >-
+  I am an M.S. student at the Graduate School of Artificial Intelligence, POSTECH, advised by
+  Prof. Jungseul Ok in the Machine Learning Lab. My research interests lie in agentic AI —
+  especially computer-use agents, terminal agents, multimodal agents, agent harness design,
+  and benchmark construction for realistic agent workflows. I am interested in building AI
+  agents that can operate over persistent workspaces, interact with tools, and solve tasks
+  grounded in complex real-world artifacts such as code, documents, images, audio, and video.
+
+research_interests:
+  - Agentic AI
+  - Computer-use agents
+  - Terminal & CLI/API-based agents
+  - Multimodal agents
+  - Agent harness design
+  - Benchmark construction & evaluation
+  - Multimedia-file workflows for AI agents
+  - AI agents for document editing & knowledge work
+
+education:
+  - degree: "M.S. in Artificial Intelligence"
+    institution: "POSTECH, Graduate School of Artificial Intelligence"
+    location: "Pohang, South Korea"
+    dates: "2025 – Present"
+    note: "Machine Learning Lab · Advisor: Prof. Jungseul Ok"
+  - todo: true
+    note: "Undergraduate degree, institution, major, and dates (paste from LinkedIn)."
+
+experience:
+  - todo: true
+    note: "Internships, research/teaching assistantships, or positions."
+
+awards:
+  - todo: true
+    note: "Scholarships, fellowships, competition prizes. (DeepCatch Agent 1st place is listed under Projects.)"
+
+patents:
+  - title_en: "Method and Program for Automated Production Planning Considering Factory Equipment and Operation Status"
+    title_kr: "공장 설비 및 작업 상태를 고려한 자동화된 생산 계획 수립 방법 및 프로그램"
+    inventors:
+      - { name: "Taewoon Kim" }
+      - { name: "Jun Seo" }
+      - { name: "Chiyeong Heo", me: true }
+    status: "Korean patent application (pending)"
+    assignee: "Pusan National University"
+    filings:
+      - { kind: "Provisional", number: "10-2024-0192808", date: "2024-12-20" }
+      - { kind: "Main",        number: "10-2025-0028136", date: "2025-03-05" }

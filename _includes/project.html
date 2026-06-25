@@ -1,0 +1,23 @@
+{%- assign pr = include.project -%}
+<article class="project">
+  <h3 class="project__title">
+    {{ pr.name }}
+    {%- if pr.award %}<span class="award-badge">{{ pr.award }}</span>{% endif -%}
+  </h3>
+  {%- if pr.role %}<p class="project__role">{{ pr.role }}</p>{% endif -%}
+  {%- if pr.description %}<p class="project__desc">{{ pr.description }}</p>{% endif -%}
+  {%- if pr.stack %}<p class="project__stack">{{ pr.stack }}</p>{% endif -%}
+  {%- if pr.links and pr.links.size > 0 -%}
+  <div class="linkrow">
+    {%- for l in pr.links -%}
+      {%- if l.url == "TODO" or l.url == "" or l.url == nil -%}
+        <span class="todo-link" title="coming soon">{{ l.type }}</span>
+      {%- elsif l.url contains "://" -%}
+        <a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.type }}</a>
+      {%- else -%}
+        <a href="{{ l.url | relative_url }}">{{ l.type }}</a>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+  {%- endif -%}
+</article>

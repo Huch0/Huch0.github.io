@@ -1,0 +1,14 @@
+<nav class="nav" aria-label="Primary">
+  <ul class="nav__links">
+    {%- for item in site.nav -%}
+    {%- assign cur = page.url | remove: "index.html" -%}
+    {%- if item.url == "/" -%}
+      {%- if cur == "/" %}{% assign active = true %}{% else %}{% assign active = false %}{% endif -%}
+    {%- else -%}
+      {%- if cur contains item.url %}{% assign active = true %}{% else %}{% assign active = false %}{% endif -%}
+    {%- endif -%}
+    <li><a href="{{ item.url | relative_url }}"{% if active %} class="is-active" aria-current="page"{% endif %}>{{ item.title }}</a></li>
+    {%- endfor -%}
+  </ul>
+  {% include controls.html %}
+</nav>

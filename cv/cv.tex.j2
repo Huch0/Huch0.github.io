@@ -1,0 +1,106 @@
+((# Generated CV template — XeLaTeX. Edit STYLE here; edit FACTS in _data/*.yml. #))
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.9in]{geometry}
+\usepackage{fontspec}
+\usepackage{titlesec}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+% Atkinson Hyperlegible (bundled in cv/fonts/ so `make cv` is self-contained).
+\setmainfont{AtkinsonHyperlegible}[
+  Path=fonts/, Extension=.ttf,
+  UprightFont=*-Regular, BoldFont=*-Bold,
+  ItalicFont=*-Italic, BoldItalicFont=*-BoldItalic ]
+
+\definecolor{accent}{HTML}{2563EB}
+\definecolor{muted}{HTML}{5B6270}
+\hypersetup{colorlinks=true, urlcolor=accent}
+
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\large\bfseries}{}{0pt}{}[\vspace{2pt}\color{muted}\titlerule]
+\titlespacing{\section}{0pt}{14pt}{8pt}
+
+\newcommand{\daria}{$^{\dagger}$}
+
+\begin{document}
+
+% ---------- Header ----------
+{\Huge\bfseries ((( profile.name | tex )))}\\[4pt]
+{\color{muted} ((( profile.role | tex )))((* for line in profile.affiliation_lines *)) \textbullet{} ((( line | tex )))((* endfor *))}\\[2pt]
+((* if cv.advisor is defined and cv.advisor *)){\color{muted}Advised by ((( cv.advisor.name | tex )))}\\[2pt]((* endif *))
+{\color{muted}%
+\href{mailto:((( profile.email )))}{((( profile.email | tex )))}%
+((* for l in profile.links *)) \textbullet{} \href{((( l.url )))}{((( l.name | tex )))}((* endfor *))%
+}
+
+% ---------- Research interests ----------
+((* if cv.research_interests *))
+\section*{Research Interests}
+((* for ri in cv.research_interests *))((( ri | tex )))((* if not loop.last *)), ((* endif *))((* endfor *))
+((* endif *))
+
+% ---------- Education ----------
+((* set edu = cv.education | selectattr('todo', 'undefined') | list *))
+((* if edu *))
+\section*{Education}
+((* for e in edu *))
+\textbf{((( e.degree | tex )))} \hfill {\color{muted}((( e.dates | tex )))}\\
+((( e.institution | tex )))((* if e.location *)) \textbullet{} ((( e.location | tex )))((* endif *))((* if e.note *))\\ {\color{muted}((( e.note | tex )))}((* endif *))
+\vspace{6pt}
+
+((* endfor *))
+((* endif *))
+
+% ---------- Experience ----------
+((* set exp = cv.experience | selectattr('todo', 'undefined') | list *))
+((* if exp *))
+\section*{Experience}
+((* for x in exp *))
+\textbf{((( x.title | tex )))} \hfill {\color{muted}((( x.dates | tex )))}\\
+((( x.organization | tex )))((* if x.location *)) \textbullet{} ((( x.location | tex )))((* endif *))((* if x.note *))\\ {\color{muted}((( x.note | tex )))}((* endif *))
+\vspace{6pt}
+
+((* endfor *))
+((* endif *))
+
+% ---------- Publications ----------
+((* if publications *))
+\section*{Publications}
+\begin{enumerate}[leftmargin=*, itemsep=6pt]
+((* for pub in publications *))
+  \item ((* for a in pub.authors *))((* if a.me *))\textbf{((( a.name | tex )))}((* else *))((( a.name | tex )))((* endif *))((* if a.eq *))\daria((* endif *))((* if not loop.last *)), ((* endif *))((* endfor *)).
+  ``((( pub.title | tex ))).''
+  {\color{muted}\textit{((( pub.status | tex )))}.}
+((* endfor *))
+\end{enumerate}
+((* set anyeq = false *))((* for pub in publications *))((* for a in pub.authors *))((* if a.eq *))((* set anyeq = true *))((* endif *))((* endfor *))((* endfor *))
+((* if anyeq *)){\color{muted}\small \daria{} Equal contribution.}((* endif *))
+((* endif *))
+
+% ---------- Patents ----------
+((* if cv.patents *))
+\section*{Patents}
+((* for pt in cv.patents *))
+\textbf{((( pt.title_en | tex )))}\\
+Inventors: ((* for inv in pt.inventors *))((* if inv.me *))\textbf{((( inv.name | tex )))}((* else *))((( inv.name | tex )))((* endif *))((* if not loop.last *)), ((* endif *))((* endfor *)).\\
+{\color{muted}((( pt.status | tex )))((* if pt.assignee *)) \textbullet{} Assignee: ((( pt.assignee | tex )))((* endif *))}\\
+{\color{muted}((* for f in pt.filings *))((( f.kind | tex ))): ((( f.number | tex ))) (((( f.date | tex ))))((* if not loop.last *)) \textbullet{} ((* endif *))((* endfor *))}
+\vspace{6pt}
+
+((* endfor *))
+((* endif *))
+
+% ---------- Awards ----------
+((* set awd = cv.awards | selectattr('todo', 'undefined') | list *))
+((* if awd *))
+\section*{Awards \& Honors}
+((* for a in awd *))
+\textbf{((( a.title | tex )))} \hfill {\color{muted}((( a.date | tex )))}((* if a.note *))\\ {\color{muted}((( a.note | tex )))}((* endif *))
+\vspace{6pt}
+
+((* endfor *))
+((* endif *))
+
+\end{document}

@@ -1,0 +1,52 @@
+# Publications — single source of truth (web pages + LaTeX CV read from here).
+#
+# Per-author keys:  name (required) · me: true (bold you) · eq: true (equal-contribution dagger)
+# Author names are kept EXACTLY as printed in each paper (spelling is intentional).
+# Link types render in order; url "TODO" shows a dashed placeholder button.
+# Status labels are conservative — never "accepted"/"published" unless verified.
+
+- key: heo2026mmtb
+  title: "MMTB: Evaluating Terminal Agents on Multimedia-File Tasks"
+  authors:
+    - { name: "Chiyeong Heo", me: true }
+    - { name: "Jaechang Kim" }
+    - { name: "Junhyuk Kwon" }
+    - { name: "Hoyoung Kim" }
+    - { name: "Dongmin Park" }
+    - { name: "Jonghyun Lee" }
+    - { name: "Jungseul Ok" }
+  year: 2026
+  status: "arXiv preprint, 2026"
+  selected: true
+  abstract: >-
+    We introduce MultiMedia-TerminalBench, a benchmark of 105 multimedia-file tasks where
+    terminal agents must inspect audio, video, and image files, ground decisions in
+    multimedia evidence, and produce verifier-checkable output artifacts. We also study
+    multimedia-aware terminal-agent harnesses such as Terminus-MM.
+  links:
+    - { type: arXiv,   url: "https://arxiv.org/abs/2605.10966" }
+    - { type: paper,   url: "https://arxiv.org/pdf/2605.10966" }
+    - { type: project, url: "https://mm-tbench.github.io/multimedia-terminal-bench/" }
+    - { type: code,    url: "TODO" }
+    - { type: dataset, url: "TODO" }
+    - { type: bibtex,  url: "/assets/bib/heo2026mmtb.bib" }
+
+- key: heo2025tardiness
+  title: "Estimated Tardiness-Based Reinforcement Learning Solution to Repeatable Job-Shop Scheduling Problems"
+  authors:
+    - { name: "Chi Yeong Heo", me: true, eq: true }
+    - { name: "Jun Seo", eq: true }
+    - { name: "Yonggang Kim" }
+    - { name: "Yohan Kim" }
+    - { name: "Taewoon Kim" }
+  year: 2025
+  status: "Processes, 2025, 13(1), 62"
+  selected: true
+  abstract: >-
+    A reinforcement-learning-based scheduling method for repeatable job-shop scheduling
+    problems with estimated tardiness objectives.
+  links:
+    - { type: doi,    url: "https://doi.org/10.3390/pr13010062" }
+    - { type: paper,  url: "https://www.mdpi.com/2227-9717/13/1/62/pdf" }
+    - { type: code,   url: "https://github.com/Huch0/RL-Scheduler" }
+    - { type: bibtex, url: "/assets/bib/heo2025tardiness.bib" }

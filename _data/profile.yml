@@ -1,0 +1,27 @@
+# Profile card — shown on every page. Edit these facts here only.
+name: Chiyeong Heo
+name_kr: 허치영
+photo: /assets/img/profile.jpg   # TODO: replace placeholder with a real headshot
+
+role: M.S. student
+affiliation_lines:
+  - Graduate School of Artificial Intelligence, POSTECH
+  - Machine Learning Lab
+advisor:
+  name: Prof. Jungseul Ok
+  url: ""        # optional: advisor / lab homepage
+
+email: chiyeongheo@postech.ac.kr
+cv: /assets/files/cv.pdf
+
+# Social / academic links (icons: github, scholar, linkedin)
+links:
+  - name: GitHub
+    icon: github
+    url: "https://github.com/Huch0"
+  - name: Google Scholar
+    icon: scholar
+    url: "https://scholar.google.com/citations?hl=en&user=RSXhUpAAAAAJ"
+  - name: LinkedIn
+    icon: linkedin
+    url: "https://www.linkedin.com/in/chiyeong-heo/"
