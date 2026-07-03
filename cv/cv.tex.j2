@@ -1,4 +1,5 @@
-((# Generated CV template — XeLaTeX. Edit STYLE here; edit FACTS in _data/*.yml. #))
+((# Generated CV template (XeLaTeX). Bilingual: `lang` is 'en' or 'kr'.
+    Edit STYLE here; edit FACTS in _data/*.yml. L(obj,'field') picks the language. #))
 \documentclass[11pt]{article}
 
 \usepackage[a4paper,margin=0.9in]{geometry}
@@ -8,11 +9,18 @@
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 
-% Atkinson Hyperlegible (bundled in cv/fonts/ so `make cv` is self-contained).
+((* if lang == 'kr' *))
+% Korean CV — NanumGothic covers Hangul + Latin (bundled in cv/fonts/).
+\setmainfont{NanumGothic}[
+  Path=fonts/, Extension=.ttf,
+  UprightFont=*-Regular, BoldFont=*-Bold, AutoFakeSlant=0.12 ]
+((* else *))
+% English CV — Atkinson Hyperlegible (bundled in cv/fonts/).
 \setmainfont{AtkinsonHyperlegible}[
   Path=fonts/, Extension=.ttf,
   UprightFont=*-Regular, BoldFont=*-Bold,
   ItalicFont=*-Italic, BoldItalicFont=*-BoldItalic ]
+((* endif *))
 
 \definecolor{accent}{HTML}{0F766E}
 \definecolor{muted}{HTML}{5B6270}
@@ -27,9 +35,8 @@
 \begin{document}
 
 % ---------- Header ----------
-{\Huge\bfseries ((( profile.name | tex )))}\\[4pt]
-{\color{muted} ((( profile.role | tex )))((* for line in profile.affiliation_lines *)) \textbullet{} ((( line.text | tex )))((* endfor *))}\\[2pt]
-((* if cv.advisor is defined and cv.advisor *)){\color{muted}Advised by ((( cv.advisor.name | tex )))}\\[2pt]((* endif *))
+{\Huge\bfseries ((( L(profile,'name') | tex )))}\\[4pt]
+{\color{muted} ((( L(profile,'role') | tex )))((* for line in profile.affiliation_lines *)) \textbullet{} ((( L(line,'text') | tex )))((* endfor *))}\\[2pt]
 {\color{muted}%
 \href{mailto:((( profile.email )))}{((( profile.email | tex )))}%
 ((* if profile.homepage *)) \textbullet{} \href{((( profile.homepage )))}{((( profile.homepage | replace('https://','') | replace('http://','') | tex )))}((* endif *))%
@@ -39,10 +46,10 @@
 % ---------- Education ----------
 ((* set edu = cv.education | selectattr('todo', 'undefined') | list *))
 ((* if edu *))
-\section*{Education}
+\section*{((( labels.education )))}
 ((* for e in edu *))
-\textbf{((( e.degree | tex )))} \hfill {\color{muted}((( e.dates | tex )))}\\
-((( e.institution | tex )))((* if e.location *)) \textbullet{} ((( e.location | tex )))((* endif *))((* if e.note *))\\ {\color{muted}((( e.note | tex )))}((* endif *))((* if e.gpa *))\\ {\color{muted}((( e.gpa | tex )))}((* endif *))((* if e.honors *))\\ \textbf{((( e.honors | tex )))}((* endif *))
+\textbf{((( L(e,'degree') | tex )))} \hfill {\color{muted}((( e.dates | tex )))}\\
+((( L(e,'institution') | tex )))((* if L(e,'location') *)) \textbullet{} ((( L(e,'location') | tex )))((* endif *))((* if L(e,'note') *))\\ {\color{muted}((( L(e,'note') | tex )))}((* endif *))((* if L(e,'gpa') *))\\ {\color{muted}((( L(e,'gpa') | tex )))}((* endif *))((* if L(e,'honors') *))\\ \textbf{((( L(e,'honors') | tex )))}((* endif *))
 \vspace{6pt}
 
 ((* endfor *))
@@ -51,18 +58,18 @@
 % ---------- Experience ----------
 ((* set exp = cv.experience | default([]) | selectattr('todo', 'undefined') | list *))
 ((* if exp *))
-\section*{Experience}
+\section*{((( labels.experience )))}
 ((* for x in exp *))
-\textbf{((( x.title | tex )))} \hfill {\color{muted}((( x.dates | tex )))}\\
-((( x.organization | tex )))((* if x.location *)) \textbullet{} ((( x.location | tex )))((* endif *))((* if x.note *))\\ {\color{muted}((( x.note | tex )))}((* endif *))
+\textbf{((( L(x,'title') | tex )))} \hfill {\color{muted}((( x.dates | tex )))}\\
+((( L(x,'organization') | tex )))((* if L(x,'location') *)) \textbullet{} ((( L(x,'location') | tex )))((* endif *))((* if L(x,'note') *))\\ {\color{muted}((( L(x,'note') | tex )))}((* endif *))
 \vspace{6pt}
 
 ((* endfor *))
 ((* endif *))
 
-% ---------- Publications ----------
+% ---------- Publications (kept in the language of record — English) ----------
 ((* if publications *))
-\section*{Publications}
+\section*{((( labels.publications )))}
 \begin{enumerate}[leftmargin=*, itemsep=6pt]
 ((* for pub in publications *))
   \item ((* for a in pub.authors *))((* if a.me *))\textbf{((( a.name | tex )))}((* else *))((( a.name | tex )))((* endif *))((* if a.eq *))\daria((* endif *))((* if not loop.last *)), ((* endif *))((* endfor *)).
@@ -71,17 +78,17 @@
 ((* endfor *))
 \end{enumerate}
 ((* set anyeq = false *))((* for pub in publications *))((* for a in pub.authors *))((* if a.eq *))((* set anyeq = true *))((* endif *))((* endfor *))((* endfor *))
-((* if anyeq *)){\color{muted}\small \daria{} Equal contribution.}((* endif *))
+((* if anyeq *)){\color{muted}\small \daria{} ((( labels.equal ))).}((* endif *))
 ((* endif *))
 
 % ---------- Patents ----------
 ((* if cv.patents *))
-\section*{Patents}
+\section*{((( labels.patents )))}
 ((* for pt in cv.patents *))
-\textbf{((( pt.title_en | tex )))}\\
-Inventors: ((* for inv in pt.inventors *))((* if inv.me *))\textbf{((( inv.name | tex )))}((* else *))((( inv.name | tex )))((* endif *))((* if not loop.last *)), ((* endif *))((* endfor *)).\\
-{\color{muted}((( pt.status | tex )))((* if pt.assignee *)) \textbullet{} Assignee: ((( pt.assignee | tex )))((* endif *))}\\
-{\color{muted}((* for f in pt.filings *))((( f.kind | tex ))): ((( f.number | tex ))) (((( f.date | tex ))))((* if not loop.last *)) \textbullet{} ((* endif *))((* endfor *))}
+\textbf{((* if lang == 'kr' *))((( pt.title_kr | tex )))((* else *))((( pt.title_en | tex )))((* endif *))}\\
+((( labels.inventors ))): ((* for inv in pt.inventors *))((* if inv.me *))\textbf{((( L(inv,'name') | tex )))}((* else *))((( L(inv,'name') | tex )))((* endif *))((* if not loop.last *)), ((* endif *))((* endfor *)).\\
+{\color{muted}((( L(pt,'status') | tex )))((* if L(pt,'assignee') *)) \textbullet{} ((( labels.assignee ))): ((( L(pt,'assignee') | tex )))((* endif *))}\\
+{\color{muted}((* for f in pt.filings *))((( L(f,'kind') | tex ))): ((( f.number | tex ))) (((( f.date | tex ))))((* if not loop.last *)) \textbullet{} ((* endif *))((* endfor *))}
 \vspace{6pt}
 
 ((* endfor *))
@@ -90,9 +97,9 @@ Inventors: ((* for inv in pt.inventors *))((* if inv.me *))\textbf{((( inv.name 
 % ---------- Awards ----------
 ((* set awd = cv.awards | selectattr('todo', 'undefined') | list *))
 ((* if awd *))
-\section*{Awards \& Honors}
+\section*{((( labels.awards )))}
 ((* for a in awd *))
-\textbf{((( a.title | tex )))} \hfill {\color{muted}((( a.date | tex )))}((* if a.note *))\\ {\color{muted}((( a.note | tex )))}((* endif *))
+\textbf{((( L(a,'title') | tex )))} \hfill {\color{muted}((( a.date | tex )))}((* if L(a,'note') *))\\ {\color{muted}((( L(a,'note') | tex )))}((* endif *))
 \vspace{6pt}
 
 ((* endfor *))
@@ -100,29 +107,29 @@ Inventors: ((* for inv in pt.inventors *))((* if inv.me *))\textbf{((( inv.name 
 
 % ---------- Projects ----------
 ((* if projects *))
-\section*{Projects}
+\section*{((( labels.projects )))}
 ((* for p in projects.featured *))
-\textbf{((( p.name | tex )))}((* if p.award *)) \hfill {\color{muted}((( p.award | tex )))}((* endif *))\\
-((* if p.role *)){\color{muted}((( p.role | tex )))}\\ ((* endif *))((( p.description | tex )))((* if p.stack *))\\ {\color{muted}((( p.stack | tex )))}((* endif *))
+\textbf{((( p.name | tex )))}((* if L(p,'award') *)) \hfill {\color{muted}((( L(p,'award') | tex )))}((* endif *))\\
+((* if L(p,'role') *)){\color{muted}((( L(p,'role') | tex )))}\\ ((* endif *))((( L(p,'description') | tex )))((* if p.stack *))\\ {\color{muted}((( p.stack | tex )))}((* endif *))
 \vspace{6pt}
 
 ((* endfor *))
 ((* if projects.mentoring *))
-\textit{Mentoring}\\[3pt]
+\textit{((( labels.mentoring )))}\\[3pt]
 ((* for p in projects.mentoring *))
-\textbf{((( p.name | tex )))}((* if p.role *)) \hfill {\color{muted}((( p.role | tex )))}((* endif *))\\
-((( p.description | tex )))
+\textbf{((( L(p,'name') | tex )))}((* if p.role *)) \hfill {\color{muted}((( p.role | tex )))}((* endif *))\\
+((( L(p,'description') | tex )))
 \vspace{6pt}
 
 ((* endfor *))
 ((* endif *))
 ((* if projects.class_projects *))
-\textit{Class Projects}\\[3pt]
+\textit{((( labels.class_projects )))}\\[3pt]
 ((* for grp in projects.class_projects *))
-\textbf{((( grp.subfield | tex )))}
+\textbf{((( L(grp,'subfield') | tex )))}
 \begin{itemize}[leftmargin=*, itemsep=1pt, topsep=2pt]
 ((* for it in grp['items'] *))
-\item ((( it.name | tex )))((* if it.course *)) {\color{muted}(((( it.course | tex ))))}((* endif *))((* if it.description *)) --- ((( it.description | tex )))((* endif *))
+\item ((( it.name | tex )))((* if L(it,'course') *)) {\color{muted}(((( L(it,'course') | tex ))))}((* endif *))((* if L(it,'description') *)) --- ((( L(it,'description') | tex )))((* endif *))
 ((* endfor *))
 \end{itemize}
 ((* endfor *))

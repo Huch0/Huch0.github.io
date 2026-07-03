@@ -323,6 +323,34 @@ html[data-theme="dark"] .award-badge { color: #ffd970; background: #36300f; }
 .cproj__desc { font-size: var(--text-sm); color: var(--text-muted); margin-top: 2px; }
 
 // --- CV page (embedded PDF) -------------------------------------------------
+.cv-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+.cv-langs {
+  display: inline-flex;
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.cv-lang-btn {
+  background: var(--bg);
+  color: var(--text-muted);
+  border: 0;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--text-sm);
+  transition: background var(--transition), color var(--transition);
+}
+.cv-lang-btn + .cv-lang-btn { border-left: var(--border-w) solid var(--border); }
+.cv-lang-btn:hover { color: var(--text); }
+.cv-lang-btn.is-active { background: var(--accent); color: #fff; }
+
 .cv-embed {
   width: 100%;
   height: 80vh;

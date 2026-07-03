@@ -11,12 +11,14 @@ _site
 # RubyGems
 *.gem
 
-# CV LaTeX build artifacts (cv.pdf is published to assets/files/, not here)
+# CV LaTeX build artifacts (the compiled PDFs are published to assets/files/, not here).
+# Note: cv/cv.tex.j2 (template) and cv/fonts/ are tracked; only generated files are ignored.
 cv/cv.tex
-cv/cv.aux
-cv/cv.log
-cv/cv.out
-cv/cv.pdf
+cv/cv-kr.tex
+cv/*.aux
+cv/*.log
+cv/*.out
+cv/*.pdf
 
 # Personal source documents (the CV is authored from _data, not the docx)
 *.docx

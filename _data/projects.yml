@@ -1,16 +1,22 @@
 # Projects — work done OUTSIDE a publication effort (research that led to a paper
 # belongs in publications.yml). Grouped: featured / mentoring / class_projects.
+# `*_kr` fields feed the Korean CV; the website uses the English fields.
 # Link types render as labels; url "TODO" shows a dashed placeholder button.
 
 # Substantial, self-contained projects.
 featured:
   - name: DeepCatch Agent
     award: "1st place · 2025 POSTECH Digital Twin Chatbot Hackathon"
+    award_kr: "대상 · 2025 POSTECH 디지털 트윈 챗봇 해커톤"
     role: "Team project with Jun Seo (equal contribution)"
+    role_kr: "팀 프로젝트, 서준과 공동 (동등 기여)"
     description: >-
       An AI telephone-reservation assistant for fishing tourists in Pohang's Guryongpo: it
       gathers weather and catch data to recommend personalized fishing plans and automates
       phone bookings with fishing establishments through Twilio voice calls.
+    description_kr: >-
+      포항 구룡포의 낚시 관광객을 위한 AI 전화 예약 어시스턴트. 날씨·조황 데이터를 수집해 맞춤형 낚시
+      계획을 추천하고, Twilio 음성 통화로 낚시 업체 예약을 자동화한다.
     stack: "LangGraph · FastAPI · Twilio · OpenAI Realtime API · Socket.IO · Next.js / TypeScript"
     links:
       - { type: code,     url: "https://github.com/sjin4861/deepcatch-agent" }
@@ -19,59 +25,81 @@ featured:
 # Teaching / mentoring.
 mentoring:
   - name: "IBE Mentoring Program — Mentor"
+    name_kr: "IBE 멘토링 프로그램 — 멘토"
     role: "2024"
     description: >-
       Taught reinforcement-learning fundamentals to first- and second-year students:
       implemented and visualized policy and value iteration, and built a custom RL
       environment (Apple Game) with OpenAI Gymnasium.
+    description_kr: >-
+      1·2학년 학생에게 강화학습 기초를 지도. 정책·가치 반복(policy/value iteration)을 구현·시각화하고,
+      OpenAI Gymnasium으로 커스텀 강화학습 환경(Apple Game)을 제작.
     links:
       - { type: code, url: "https://github.com/Huch0/Mentoring-RL-Env" }
 
 # Coursework, grouped by CS subfield.
 class_projects:
   - subfield: "Machine Learning & AI"
+    subfield_kr: "머신러닝 & AI"
     items:
       - name: "Project Einstein"
         description: "An interactive physics-education platform that turns physics diagrams into animated simulations with AI-agent tutoring (computer vision + AI agents + real-time simulation). Team project with Jun Seo."
+        description_kr: "물리 다이어그램을 애니메이션 시뮬레이션으로 변환하고 AI 에이전트 튜터링을 제공하는 인터랙티브 물리 교육 플랫폼(컴퓨터 비전 + AI 에이전트 + 실시간 시뮬레이션). 서준과 공동 팀 프로젝트."
         links:
           - { type: code, url: "https://github.com/Huch0/Project-Einstein" }
       - name: "Dong Baek Jeon Transaction Data Analysis"
         course: "Data Mining"
+        course_kr: "데이터마이닝"
         description: "K-means clustering of Busan local-currency transaction data to surface local economic patterns."
+        description_kr: "K-평균 군집화로 부산 지역화폐 거래 데이터를 분석해 지역 경제 패턴을 도출."
         links:
           - { type: code, url: "https://github.com/Huch0/DongBaekJeon-DataAnalysis" }
       - name: "Celebrity Look-Alike Finder"
         course: "Cloud Computing"
+        course_kr: "클라우드 컴퓨팅"
         description: "An AI service using AWS Rekognition to find celebrity look-alikes; backend processing, API handling, and image ingestion."
+        description_kr: "AWS Rekognition을 활용해 닮은 유명인을 찾는 AI 서비스. 백엔드 처리·API 핸들링·이미지 수집 구현."
         links:
           - { type: code, url: "https://github.com/Huch0/Cloud-Computing-Term-Project-17" }
 
   - subfield: "Embedded Systems"
+    subfield_kr: "임베디드 시스템"
     items:
       - name: "Human-Detecting Lifesaving 4WD Robot"
         course: "Embedded System Design & Lab"
+        course_kr: "임베디드 시스템 설계 및 실험"
         description: "Firmware for a robot that detects people via PIR/ultrasonic sensors and communicates over Bluetooth (Cortex-M3 STM32F107, ESP32-CAM, L298N motor driver)."
+        description_kr: "PIR·초음파 센서로 사람을 감지하고 블루투스로 통신하는 로봇 펌웨어 (Cortex-M3 STM32F107, ESP32-CAM, L298N 모터 드라이버)."
         links:
           - { type: code, url: "https://github.com/Huch0/lifesavingRobot" }
 
   - subfield: "Software Development"
+    subfield_kr: "소프트웨어 개발"
     items:
       - name: "Zombie Survival FPS Game"
         course: "Computer Graphics"
+        course_kr: "컴퓨터 그래픽스"
         description: "A 3D Unity game with NavMesh and rigidbody physics: player control, zombie AI, stage systems, and weapons."
+        description_kr: "NavMesh와 강체 물리를 적용한 3D Unity 게임: 플레이어 제어, 좀비 AI, 스테이지 시스템, 무기 구현."
         links:
           - { type: code, url: "https://github.com/Huch0/zombie-survival" }
       - name: "Hangman Android Game"
         course: "Computer Software Design & Lab"
+        course_kr: "컴퓨터 소프트웨어 설계 및 실험"
         description: "A Kotlin Android game with difficulty levels, sound effects, and a Firebase Firestore ranking system."
+        description_kr: "난이도 조절, 효과음, Firebase Firestore 랭킹 시스템을 갖춘 Kotlin 안드로이드 게임."
         # links: TODO — confirm repo
       - name: "Graduate School Lab Database"
         course: "Database"
+        course_kr: "데이터베이스"
         description: "A contact-management and social web app with Next.js, Sequelize, and PostgreSQL; React UI and database transaction logic."
+        description_kr: "Next.js·Sequelize·PostgreSQL 기반 연락처 관리·소셜 웹앱. React UI와 DB 트랜잭션 로직 구현."
         links:
           - { type: code, url: "https://github.com/Huch0/db_project" }
       - name: "Hangman Logic Circuit Design"
         course: "Logic Circuit Design & Lab"
+        course_kr: "논리회로 설계 및 실험"
         description: "Hangman implemented as a digital circuit on an FPGA (Intel Quartus): keypad input, 7-segment display, and piezo output."
+        description_kr: "FPGA(Intel Quartus)에서 디지털 회로로 구현한 행맨 게임: 키패드 입력, 7세그먼트 디스플레이, 피에조 출력."
         links:
           - { type: code, url: "https://github.com/Huch0/LogicCircuitDesignAndExperiment" }

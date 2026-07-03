@@ -13,14 +13,17 @@ serve:
 build:
 	bundle exec jekyll build
 
-# Single source of truth: _data/*.yml -> cv/cv.tex (generated) -> assets/files/cv.pdf
-# The .tex is a render target; never edit CV facts in LaTeX, edit the YAML.
+# Single source of truth: _data/*.yml -> cv/cv{,-kr}.tex (generated) -> assets/files/.
+# Builds BOTH the English and Korean CV. The .tex is a render target; never edit CV
+# facts in LaTeX, edit the YAML.
 cv:
 	python3 cv/generate_cv.py
 	cd cv && xelatex -interaction=nonstopmode cv.tex >/dev/null && xelatex -interaction=nonstopmode cv.tex >/dev/null
+	cd cv && xelatex -interaction=nonstopmode cv-kr.tex >/dev/null && xelatex -interaction=nonstopmode cv-kr.tex >/dev/null
 	mkdir -p assets/files
 	cp cv/cv.pdf assets/files/cv.pdf
-	@echo "✓ assets/files/cv.pdf regenerated"
+	cp cv/cv-kr.pdf assets/files/cv-kr.pdf
+	@echo "✓ assets/files/cv.pdf and cv-kr.pdf regenerated"
 
 clean:
-	rm -rf _site .jekyll-cache cv/cv.aux cv/cv.log cv/cv.out cv/cv.tex cv/cv.pdf
+	rm -rf _site .jekyll-cache cv/*.aux cv/*.log cv/*.out cv/cv.tex cv/cv-kr.tex cv/*.pdf

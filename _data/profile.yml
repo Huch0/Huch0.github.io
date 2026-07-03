@@ -1,21 +1,27 @@
 # Profile card — shown on every page. Edit these facts here only.
+# `*_kr` fields are used by the Korean CV (make cv). The website uses the English fields.
 name: Chiyeong Heo
 name_kr: 허치영
 photo: /assets/img/profile.jpg   # TODO: replace placeholder with a real headshot
 
 role: M.S. student
+role_kr: 석사과정
 affiliation_lines:
   - text: "Graduate School of Artificial Intelligence, POSTECH"
+    text_kr: "포항공과대학교(POSTECH) 인공지능대학원"
     url: "https://ai.postech.ac.kr/"
   - text: "Machine Learning Lab"
+    text_kr: "머신러닝 연구실"
     url: "https://sites.google.com/view/jungseulok"
 advisor:
   name: Prof. Jungseul Ok
+  name_kr: "옥정슬 교수"        # TODO: verify the advisor's Korean name
   url: "https://sites.google.com/view/jungseulok"
 
 email: chiyeongheo@postech.ac.kr
 homepage: "https://huch0.github.io"   # shown in the CV header (not the web profile card)
 cv: /assets/files/cv.pdf
+cv_kr: /assets/files/cv-kr.pdf
 
 # Social / academic links (icons: github, scholar, linkedin)
 links:

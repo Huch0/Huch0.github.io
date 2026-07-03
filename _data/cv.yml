@@ -1,5 +1,6 @@
 # CV facts — single source of truth for the About-page sections AND the LaTeX CV.
-# Mark unknown items with `todo: true` (renders an italic placeholder, never invented data).
+# `*_kr` fields feed the Korean CV (make cv builds both cv.pdf and cv-kr.pdf); the website
+# uses the English fields. Mark unknown items with `todo: true` (omitted from the PDF).
 
 bio: >-
   I am an M.S. student at the [Graduate School of Artificial Intelligence, POSTECH](https://ai.postech.ac.kr/),
@@ -19,46 +20,68 @@ research_interests:
 
 education:
   - degree: "M.S. in Artificial Intelligence"
+    degree_kr: "인공지능 석사과정"
     institution: "POSTECH, Graduate School of Artificial Intelligence"
+    institution_kr: "포항공과대학교(POSTECH) 인공지능대학원"
     location: "Pohang, South Korea"
+    location_kr: "대한민국 포항"
     dates: "2025 – Present"
     note: "Machine Learning Lab · Advisor: Prof. Jungseul Ok"
+    note_kr: "머신러닝 연구실 · 지도교수: 옥정슬"
   - degree: "B.S. in Computer Science and Engineering"
+    degree_kr: "컴퓨터공학 학사"
     institution: "Pusan National University"
+    institution_kr: "부산대학교"
     location: "Busan, South Korea"
+    location_kr: "대한민국 부산"
     dates: "2020 – 2025"
     note: "School of Computer Science and Engineering, College of Information and Bio-Medical Engineering"
+    note_kr: "정보의생명공학대학 정보컴퓨터공학부"
     gpa: "Cumulative GPA 4.25 / 4.50 · Major GPA 4.30"
+    gpa_kr: "전체 평점 4.25 / 4.50 · 전공 평점 4.30"
     honors: "Summa Cum Laude · President's List"
+    honors_kr: "최우등 졸업(Summa Cum Laude) · 총장 표창(President's List)"
 
 experience:
   - title: "Research Intern, KAIST AI Research Internship (KAIRI)"
+    title_kr: "연구 인턴, KAIST AI 연구 인턴십 (KAIRI)"
     organization: "Cognitive Learning for Vision and Robotics (CLVR) Lab, KAIST"
+    organization_kr: "KAIST 인지학습·비전·로보틱스(CLVR) 연구실"
     location: "Seoul, South Korea"
+    location_kr: "대한민국 서울"
     dates: "2024"
     note: "Reinforcement learning research on reward design using Vision-Language Models (VLMs)."
+    note_kr: "비전-언어 모델(VLM)을 활용한 보상 설계 강화학습 연구."
 
 awards:
   - title: "1st Place (Grand Prize), POSTECH Digital Twin Chatbot Hackathon"
+    title_kr: "대상, POSTECH 디지털 트윈 챗봇 해커톤"
     date: "2025"
     note: "Team project (DeepCatch Agent) with Jun Seo"
+    note_kr: "팀 프로젝트 (DeepCatch Agent), 서준과 공동"
     url: "https://www.linkedin.com/posts/chiyeong-heo_hackathon-ai-chatbot-ugcPost-7378249881687281664-FaDv/"
   - title: "Academic Excellence Scholarship"
+    title_kr: "성적우수 장학금"
     date: "2023 – 2025"
     note: "Pusan National University · merit-based"
+    note_kr: "부산대학교 · 성적 우수"
   - title: "Busan Regional Talent Scholarship"
+    title_kr: "부산지역인재 장학금"
     date: "2024 – 2025"
     note: "Busan Metropolitan City"
+    note_kr: "부산광역시"
 
 patents:
   - title_en: "Method and Apparatus for Establishing Automated Production Planning Based on Factory Equipment and Job Status"
     title_kr: "공장 설비 및 작업 상태를 고려한 자동화된 생산 계획 수립 방법 및 장치"
     inventors:
-      - { name: "Taewoon Kim" }
-      - { name: "Jun Seo" }
-      - { name: "Chiyeong Heo", me: true }
+      - { name: "Taewoon Kim", name_kr: "김태운" }
+      - { name: "Jun Seo", name_kr: "서준" }
+      - { name: "Chiyeong Heo", name_kr: "허치영", me: true }
     status: "Korean patent application (filed, under examination)"
+    status_kr: "국내 특허 출원 (심사청구 · 심사 중)"
     assignee: "Pusan National University Industry-Academic Cooperation Foundation"
+    assignee_kr: "부산대학교 산학협력단"
     filings:
-      - { kind: "Provisional", number: "10-2024-0192808", date: "2024-12-20" }
-      - { kind: "Main",        number: "10-2025-0028136", date: "2025-03-05" }
+      - { kind: "Provisional", kind_kr: "가출원", number: "10-2024-0192808", date: "2024-12-20" }
+      - { kind: "Main",        kind_kr: "본출원", number: "10-2025-0028136", date: "2025-03-05" }
