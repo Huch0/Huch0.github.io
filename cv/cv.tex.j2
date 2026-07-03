@@ -60,7 +60,7 @@
 ((* if exp *))
 \section*{((( labels.experience )))}
 ((* for x in exp *))
-\textbf{((( L(x,'title') | tex )))} \hfill {\color{muted}((( x.dates | tex )))}\\
+\textbf{((( L(x,'title') | tex )))} \hfill {\color{muted}((( L(x,'dates') | tex )))}\\
 ((( L(x,'organization') | tex )))((* if L(x,'location') *)) \textbullet{} ((( L(x,'location') | tex )))((* endif *))((* if L(x,'note') *))\\ {\color{muted}((( L(x,'note') | tex )))}((* endif *))
 \vspace{6pt}
 

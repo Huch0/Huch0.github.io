@@ -49,7 +49,8 @@ experience:
     organization_kr: "KAIST 김재철AI대학원"
     location: "Seoul, South Korea"
     location_kr: "대한민국 서울"
-    dates: "2024 – 2025"
+    dates: "Dec 2024 – Feb 2025"
+    dates_kr: "2024.12 – 2025.02"
     note: "Reinforcement learning research on reward design using Vision-Language Models (VLMs)."
     note_kr: "비전-언어 모델(VLM)을 활용한 강화학습 보상 설계 연구."
 
