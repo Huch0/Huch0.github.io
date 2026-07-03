@@ -29,7 +29,7 @@ education:
     note: "Machine Learning Lab · Advisor: Prof. Jungseul Ok"
     note_kr: "머신러닝 연구실 · 지도교수: 옥정슬"
   - degree: "B.S. in Computer Science and Engineering"
-    degree_kr: "컴퓨터공학 학사"
+    degree_kr: "정보컴퓨터공학 학사"
     institution: "Pusan National University"
     institution_kr: "부산대학교"
     location: "Busan, South Korea"
@@ -40,18 +40,18 @@ education:
     gpa: "Cumulative GPA 4.25 / 4.50 · Major GPA 4.30"
     gpa_kr: "전체 평점 4.25 / 4.50 · 전공 평점 4.30"
     honors: "Summa Cum Laude · President's List"
-    honors_kr: "최우등 졸업(Summa Cum Laude) · 총장 표창(President's List)"
+    honors_kr: "성적최우수 졸업"
 
 experience:
   - title: "Research Intern, KAIST AI Research Internship (KAIRI)"
-    title_kr: "연구 인턴, KAIST AI 연구 인턴십 (KAIRI)"
-    organization: "Cognitive Learning for Vision and Robotics (CLVR) Lab, KAIST"
-    organization_kr: "KAIST 인지학습·비전·로보틱스(CLVR) 연구실"
+    title_kr: "연구 인턴, KAIST 김재철AI대학원 KAIRI 인턴십"
+    organization: "Kim Jaechul Graduate School of AI, KAIST"
+    organization_kr: "KAIST 김재철AI대학원"
     location: "Seoul, South Korea"
     location_kr: "대한민국 서울"
-    dates: "2024"
+    dates: "2024 – 2025"
     note: "Reinforcement learning research on reward design using Vision-Language Models (VLMs)."
-    note_kr: "비전-언어 모델(VLM)을 활용한 보상 설계 강화학습 연구."
+    note_kr: "비전-언어 모델(VLM)을 활용한 강화학습 보상 설계 연구."
 
 awards:
   - title: "1st Place (Grand Prize), POSTECH Digital Twin Chatbot Hackathon"

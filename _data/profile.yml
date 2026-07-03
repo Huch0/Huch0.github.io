@@ -15,7 +15,7 @@ affiliation_lines:
     url: "https://sites.google.com/view/jungseulok"
 advisor:
   name: Prof. Jungseul Ok
-  name_kr: "옥정슬 교수"        # TODO: verify the advisor's Korean name
+  name_kr: "옥정슬 교수"
   url: "https://sites.google.com/view/jungseulok"
 
 email: chiyeongheo@postech.ac.kr
